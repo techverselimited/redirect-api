@@ -8,9 +8,21 @@
     <script>
         var url = new URL(window.location.href);
         var c = url.searchParams.get("Destination");
-        
+
         const badRequest = () => {
             document.write("Bad Request!");
+        }
+
+        const unique = (length) => {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            let counter = 0;
+            while (counter < length) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                counter += 1;
+            }
+            return result;
         }
 
         if (c === null) {
@@ -28,7 +40,7 @@
                     }
                 }
             };
-            let reqId = '';
+            let reqId = unique(8);
             xhttp.open("GET", `https://techverse-server.000webhostapp.com/request/redirect.php?Destination=${c}&reqId=${reqId}`, true);
             xhttp.send();
         }
