@@ -40,7 +40,7 @@
                     }
                 }
             };
-            let reqId = unique(8);
+            let reqId = encodeURIComponent(unique(8));
             xhttp.open("GET", `https://techverse-server.000webhostapp.com/request/redirect.php?Destination=${c}&reqId=${reqId}`, true);
             xhttp.send();
         }
