@@ -10,6 +10,7 @@
         var c = url.searchParams.get("Destination");
 
         const badRequest = () => {
+            document.body.innerHTML = "";
             document.write("Bad Request!");
         }
 
@@ -45,10 +46,25 @@
             xhttp.send();
         }
     </script>
+    <style>
+        div {
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        	position: fixed;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 100%;
+        	font-family: monospace;
+        	font-size: xx-large;
+        	color: #1c7ff2;
+        }
+    </style>
 </head>
 
 <body>
-
+<div>Please wait,  redirecting...</div>
 </body>
 
 </html>
